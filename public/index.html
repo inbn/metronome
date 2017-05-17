@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Metronome - adjust BPM, accents and time signature</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link href="/build/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <main class="container">
+
+        <h1>Metronome</h1>
+
+        <p>Adjust Tempo, either using BPM or Italian tempo marking, as well as Time Signature and Accents.</p>
+
+        <div class="section">
+            <div class="input-wrap">
+                <label for="tempo">Tempo (Beats Per Minute):</label>
+                <input name="tempo" id="tempo" type="number" class="js-tempo-input" value="100" min="10" max="299" step="1">
+            </div>
+
+            <div class="input-wrap">
+                <label for="tempoterms">or based on Tempo Markings:</label>
+                <select name="tempoterms" id="tempoterms" class="js-tempo-select">
+                    <option value="45">Lento</option>
+                    <option value="50">Largo</option>
+                    <option value="55">Larghetto</option>
+                    <option value="60">Adagio</option>
+                    <option value="65">Adagietto</option>
+                    <option value="80">Andantino</option>
+                    <option value="85">Andante</option>
+                    <option value="90">Andante Moderato</option>
+                    <option value="105" selected="selected">Moderato</option>
+                    <option value="115">Allegro Moderato</option>
+                    <option value="120">Allegretto</option>
+                    <option value="130">Allegro</option>
+                    <option value="140">Vivace</option>
+                    <option value="150">Vivacissimo</option>
+                    <option value="170">Allegrissimo</option>
+                    <option value="180">Presto</option>
+                    <option value="200">Prestissimo</option>
+                </select>
+            </div>
+            <div class="input-wrap">
+                <label for="beatsperbar">Beats Per Bar:</label>
+                <input name="beatsperbar" id="beatsperbar" class="js-beats-input" type="number" value="4" min="1" max="99" step="1">
+            </div>
+        </div>
+
+        <div class="section">
+            <span>Accented Notes:</span>
+            <div class="beat-accent__wrap js-beat-accents">
+                <input type="checkbox" id="beatAccents[0]" name="beatAccents[]" value="0" class="beat-accent__checkbox js-accent-checkbox" checked>
+                <label for="beatAccents[0]" class="beat-accent__label">
+                    <span class="visually-hidden">Beat 1</span>
+                </label>
+
+                <input type="checkbox" id="beatAccents[1]" name="beatAccents[]" value="1" class="beat-accent__checkbox js-accent-checkbox">
+                <label for="beatAccents[1]" class="beat-accent__label">
+                    <span class="visually-hidden">Beat 2</span>
+                </label>
+
+                <input type="checkbox" id="beatAccents[2]" name="beatAccents[]" value="2" class="beat-accent__checkbox js-accent-checkbox">
+                <label for="beatAccents[2]" class="beat-accent__label">
+                    <span class="visually-hidden">Beat 3</span>
+                </label>
+
+                <input type="checkbox" id="beatAccents[3]" name="beatAccents[]" value="3" class="beat-accent__checkbox js-accent-checkbox">
+                <label for="beatAccents[3]" class="beat-accent__label">
+                    <span class="visually-hidden">Beat 4</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="section">
+            <button type="button" id="metronometoggle" class="js-start-button">Start</button>
+            <div class="beat-number js-beat-number"></div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="/build/js/bundle.js"></script>
+</body>
+</html>
