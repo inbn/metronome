@@ -1,6 +1,8 @@
 'use strict'
 
-var context = new window.AudioContext()
+var AudioContext = window.AudioContext || window.webkitAudioContext
+
+var context = new AudioContext
 var tempo = 100
 var beatDuration = 0.6
 var bigBeatNumber = document.querySelector('.js-beat-number')
